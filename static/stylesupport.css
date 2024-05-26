@@ -1,0 +1,134 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+.header{
+    width: 100%;
+    height: 30vh;
+    background-color: #fff;
+    background-position: center;
+    background-size: cover;
+}
+nav{
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+.logo{
+    width: 150px;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+nav ul{
+    background: #002B5B;
+    width: 100%;
+    margin-top: 10px;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 20px 30px;
+    color: #fff;
+}
+
+.text{
+    padding: 20px 8%;
+    text-align: center
+}
+
+nav.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px 8%;
+    background: #002B5B;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: padding .5s;
+}
+
+nav.sticky ul{
+    width: auto;
+}
+
+#menu li {
+    display: inline-block;
+    color: #fff;
+    margin: 10px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#menu li:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+#menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+  #menu li:hover a {
+    text-decoration: underline;
+  }
+
+  .donation-section {
+    background-color: #f9f9f9;
+    padding: 50px;
+    text-align: center;
+}
+
+.donation-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.donation-section p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.bitcoin-address {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 20px;
+    text-align: left;
+}
+
+.bitcoin-address p {
+    font-size: 14px;
+    margin: 0 0 10px 0;
+}
+
+.bitcoin-address .address {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.mrkrabs {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.mrkrabs img {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    display: block;
+    object-fit: contain;
+}

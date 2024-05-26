@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ValueVerse</title>
+        <link href="static/stylesmod.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="header">
+            <nav id="navbar">
+                <a href="/"><img id="logomod" src="static/valueverse.png" class="logo" alt="logo of the website"></a>
+                <ul id="menu">
+                    <li class="active"><a href="/">HOME</a></li>
+                    <li><a href="/models">MODELS</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                    <li><a href="/support">SUPPORT</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <div class="description">
+              <h1>Buffett's Intrinsic Value Formula</h1>
+              <p>Buffett's Intrinsic Value Formula is a method used to estimate the true worth of a company based on its fundamental characteristics.</p>
+            </div>
+            <div class="usage">
+              <h2>When to use Buffett's Intrinsic Value Formula</h2>
+              <p>Buffett's Intrinsic Value Formula is useful in situations where an investor wants to estimate the true worth of a company based on its earnings, growth rate, and required rate of return. It is commonly used by value investors.</p>
+            </div>
+            <div class="cautions">
+              <h2>Cautions and Limitations</h2>
+              <p>Buffett's Intrinsic Value Formula is a powerful tool, but it is not without its limitations. Some things to consider when using this formula include:</p>
+              <ul>
+                <li>The formula relies on accurate estimates of the company's earnings and growth rate, which can be difficult to predict.</li>
+                <li>The formula assumes a constant growth rate, which may not be realistic in practice.</li>
+                <li>The formula does not take into account qualitative factors such as a company's competitive advantages or management quality.</li>
+              </ul>
+            </div>
+        </div>
+        <div class="wrap-container">
+            <div class="container" id="calculator">
+                <h1 class="text-center mt-5">Warren Buffett Formula Calculator</h1>
+                <p class="text-center">Enter the following data to calculate the company's value:</p>
+                <form id="buffett-form" class="row g-3 justify-content-center" method="POST" action="/buffett">
+                    <div class="col-md-6">
+                        <label for="trailing-eps" class="form-label">Trailing Earnings Per Share (EPS):</label>
+                        <input type="number" step="0.001" class="form-control" id="trailing-eps" name="trailing-eps" required>
+                        <p id="error-message" style="color: red; display: none;"></p>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="expected-eps-growth" class="form-label">Expected EPS Growth (%):</label>
+                        <input type="number" step="0.0001" class="form-control" id="expected-eps-growth" name="expected-eps-growth" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="10-year-treasury-rate" class="form-label">10-Year Treasury Rate (%):</label>
+                        <input type="number" step="0.0001" class="form-control" id="treasury-rate" name="treasury-rate" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="expected-market-return" class="form-label">Expected Market Return (%):</label>
+                        <input type="number" step="0.0001" class="form-control" id="expected-market-return" name="expected-market-return" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="beta" class="form-label">Beta:</label>
+                        <input type="number" step="0.00001" class="form-control" id="beta" name="beta" required>
+                    </div>
+                    <div class="col-12 text-center mt-3">
+                        <button type="submit" class="btn btn-primary" id="calculate-btn">Calculate</button>
+                    </div>
+                </form>
+                <div id="result" class="enterprise_value"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="value-tips">
+                <h2>Definitions</h2>
+                <p>When filling out the Warren Buffett Formula Calculator, keep in mind the following:</p>
+                <ul>
+                  <li><strong>Trailing Earnings Per Share (EPS):</strong> Enter the company's earnings per share for the most recent twelve-month period.</li>
+                  <li><strong>Expected EPS Growth:</strong> Enter the expected long-term growth rate for the company's earnings per share. This should be a reasonable estimate and should not be too high as it would result in overvaluation of the company. A typical range is between 5% to 15%.</li>
+                  <li><strong>10-Year Treasury Rate:</strong> Enter the yield of the 10-year Treasury bond. This is a risk-free rate and is used as a proxy for the rate of return an investor could earn without taking any risk.</li>
+                  <li><strong>Expected Market Return:</strong> Enter the expected long-term return for the stock market as a whole. This should reflect the historical average return of the stock market and should be adjusted for any expected changes in the future. A typical range is between 6% to 8%.</li>
+                  <li><strong>Stock Beta:</strong> Enter the beta of the company's stock, which measures the level of risk associated with the stock compared to the overall market.</li>
+                </ul>
+            </div>
+        </div>
+<script>
+    var navbar = document.getElementById("navbar");
+    var menu = document.getElementById("menu");
+    var logoImage = document.getElementById("logomod");
+
+    window.onscroll = function(){
+        if(window.pageYOffset >= menu.offsetTop){
+            navbar.classList.add("sticky");
+            logoImage.src="static/small-logo.png"
+            logoImage.style.width="45px";
+            logoImage.style.height="45px";
+        }
+        else{
+            navbar.classList.remove("sticky");
+            logoImage.src="static/valueverse.png";
+            logoImage.style.width="150px";
+            logoImage.style.height="33.2px";
+        }
+    }
+    document.addEventListener("DOMContentLoaded", function(event) {
+    document.querySelector("form").addEventListener("submit", function(event) {
+        // prevent the form from submitting by default
+        event.preventDefault();
+        console.log("Form submit event triggered");
+
+        // get all the input elements in the form
+        const inputs = document.querySelectorAll("form input");
+
+        // iterate over each input element and perform the validation check
+        for (let i = 0; i < inputs.length; i++) {
+            const input = inputs[i];
+            const value = input.value.trim();
+            const floatRegex = /^-?\d+(?:\.\d+)?$/;
+            if (!floatRegex.test(value)) {
+                alert("Please enter a valid floating-point number.");
+                return false;
+            }
+        }
+
+        console.log("Validation passed. Submitting form via AJAX");
+        // submit the form
+        $.ajax({
+            url: '/buffett',
+            type: 'POST',
+            data: $('form').serialize(),
+            dataType: 'json',  // Set data type to JSON
+            success: function(response) {
+                console.log(response);  // Debugging statement
+                $('#result').text(response.enterprise_value);  // Update result on page
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+    });
+});
+
+
+
+
+</script>
+</body>
+</html>
