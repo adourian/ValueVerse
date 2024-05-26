@@ -7,7 +7,7 @@ To use, simply:
 
 - Download the repository to your local files
 - open an IDE
-- navigate to the downloaded folder
+- navigate to the downloaded folder in a terminal
 - make sure flask is installed (pip install flask)
 - run the following:
     - set FLASK_APP=app.py
