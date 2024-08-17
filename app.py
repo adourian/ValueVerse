@@ -58,18 +58,21 @@ def calculate_dcf():
 def calculate_ddm():
     if request.method == "POST":
 
+        # Inputs from form
         dividend = float(request.form['dividend'])
         risk_free_rate = float(request.form['risk-free-rate']) / 100
-        beta = float(request.form['beta']) / 100
-        market_return = float(request.form['market-return'])
+        beta = float(request.form['beta'])
+        market_return = float(request.form['market-return']) / 100
         dividend_growth = float(request.form['dividend-growth-rate']) / 100
-
-        cost_of_cap_capm = risk_free_rate + beta * (market_return - risk_free_rate)
-
-        enterprise_value = dividend / (cost_of_cap_capm - dividend_growth)
-
+        
+        # Calculate Cost of Equity using CAPM
+        cost_of_equity = risk_free_rate + beta * (market_return - risk_free_rate)
+        
+        # Calculate Enterprise Value using Gordon Growth Model
+        enterprise_value = dividend * (1 + dividend_growth) / (cost_of_equity - dividend_growth)
+        
+        # Round to 2 decimal places
         enterprise_value = round(enterprise_value, 2)
-        print(json.dumps({'enterprise_value': enterprise_value}))
         return Response(json.dumps({'enterprise_value': enterprise_value}), mimetype='application/json')
     else:
         return render_template("ddm.html")
