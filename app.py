@@ -81,17 +81,22 @@ def calculate_ddm():
 def calculate_buffett():
     if request.method == "POST":
 
+        # Inputs from form
         earnings = float(request.form['trailing-eps'])
-        growth_rate = float(request.form['expected-eps-growth']) / 100
-        risk_free_rate = float(request.form['treasury-rate']) / 100
-        market_return = float(request.form['expected-market-return']) / 100
-        beta = float(request.form['beta']) / 100
-
+        growth_rate = float(request.form['expected-eps-growth']) / 100  # Convert percentage to decimal
+        risk_free_rate = float(request.form['treasury-rate']) / 100  # Convert percentage to decimal
+        market_return = float(request.form['expected-market-return']) / 100  # Convert percentage to decimal
+        beta = float(request.form['beta'])  # Beta is already in decimal form
+        
+        # Calculate Discount Rate using CAPM
         discount_rate = risk_free_rate + beta * (market_return - risk_free_rate)
-
+        
+        # Calculate Fair Value using the Warren Buffett Formula
         fair_value = (earnings * (8.5 + 2 * growth_rate)) / discount_rate
-
+        
+        # Round to 2 decimal places
         enterprise_value = round(fair_value, 2)
+        
         print(json.dumps({'enterprise_value': enterprise_value}))
         return Response(json.dumps({'enterprise_value': enterprise_value}), mimetype='application/json')
     else:
