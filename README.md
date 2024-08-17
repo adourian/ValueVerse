@@ -21,7 +21,6 @@ This project was primarily developed to deepen my knowledge of HTML, CSS and Jav
 - [Usage](#usage)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
-- [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
 
