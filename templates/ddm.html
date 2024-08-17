@@ -42,23 +42,23 @@
               <form id="ddm-form" class="row g-3 justify-content-center" method="POST" action="/ddm">
                 <div class="col-md-6">
                   <label for="dividend" class="form-label">Expected Dividend per Share:</label>
-                  <input type="number" step="0.0001" class="form-control" id="dividend" name="dividend" required>
+                  <input type="number" step="0.1" class="form-control" id="dividend" name="dividend" required>
                 </div>
                 <div class="col-md-6">
                   <label for="risk-free-rate" class="form-label">Risk-Free Rate (%):</label>
-                  <input type="number" step="0.0001" class="form-control" id="risk-free-rate" name="risk-free-rate" required>
+                  <input type="number" step="0.1" class="form-control" id="risk-free-rate" name="risk-free-rate" required>
                 </div>
                 <div class="col-md-6">
                   <label for="beta" class="form-label">Stock Beta:</label>
-                  <input type="number" step="0.00001" class="form-control" id="beta" name="beta" required>
+                  <input type="number" step="0.1" class="form-control" id="beta" name="beta" required>
                 </div>
                 <div class="col-md-6">
                   <label for="market-return" class="form-label">Expected Market Return</label>
-                  <input type="number" step="0.00001" class="form-control" id="market-return" name="market-return" required>
+                  <input type="number" step="0.1" class="form-control" id="market-return" name="market-return" required>
                 </div>
                 <div class="col-md-6">
                   <label for="dividend-growth-rate" class="form-label">Dividend Growth Rate (%):</label>
-                  <input type="number" step="0.00001" class="form-control" id="dividend-growth-rate" name="dividend-growth-rate" required>
+                  <input type="number" step="0.1" class="form-control" id="dividend-growth-rate" name="dividend-growth-rate" required>
                 </div>
                 <div class="col-12 text-center mt-3">
                   <button type="submit" class="btn btn-primary" id="calculate-btn">Calculate</button>
