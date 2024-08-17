@@ -17,12 +17,12 @@ This project was primarily developed to deepen my knowledge of HTML, CSS and Jav
 
 ## 📚 Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [License](#license)
-- [Contact](#contact)
+- [Installation](#%EF%B8%8F-installation)
+- [Usage](#-usage)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [License](#-license)
+- [Contact](#-contact)
 
 ---
 
