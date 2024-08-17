@@ -23,7 +23,7 @@ def models():
 def calculate_dcf():
     if request.method == "POST":
 
-        free_cash_flow = float(request.form['free-cash-flow'])
+        current_fcf = float(request.form['free-cash-flow'])
         discount_rate = float(request.form['discount-rate']) / 100
         terminal_growth_rate = float(request.form['terminal-growth-rate']) / 100
         terminal_multiple = float(request.form['terminal-multiple'])
