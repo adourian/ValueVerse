@@ -24,21 +24,21 @@
         <div class="content">
             <div class="description">
               <h1>Enterprise Discounted Cash Flow (DCF)</h1>
-              <p>Enterprise Discounted Cash Flow (DCF) is a valuation method used to estimate the value of a company by projecting its future cash flows, discounting them to present value, and summing them up. It is a popular method for estimating the intrinsic value of a company.</p>
+              <p><strong>Enterprise Discounted Cash Flow (DCF)</strong> is a widely-used valuation method that estimates the intrinsic value of a company by forecasting its future cash flows and discounting them back to their present value. This method is rooted in the principle that the value of a business is inherently linked to the cash it can generate over time.</p>
             </div>
 
             <div class="usage">
               <h2>When to use DCF</h2>
-              <p>DCF is useful in situations where there is a reasonable degree of certainty about a company's future cash flows, and when the company has a stable or predictable growth rate. It is commonly used to value mature, stable companies.</p>
+              <p>DCF is particularly effective when evaluating companies with relatively stable and predictable cash flows. It is most commonly applied to mature businesses with a track record of consistent earnings and growth. This model is ideal for situations where you can reasonably forecast future performance.</p>
             </div>
 
             <div class="cautions">
               <h2>Cautions and Limitations</h2>
-              <p>DCF is a powerful tool, but it is not without its limitations. Some things to consider when using DCF include:</p>
+              <p>While DCF is a powerful valuation tool, it's important to be aware of its limitations:</p>
               <ul>
-                <li>DCF relies heavily on accurate assumptions about future cash flows and discount rates. Small changes in these assumptions can significantly impact the estimated value of the company.</li>
-                <li>DCF assumes a constant growth rate, which may not be a realistic assumption in practice.</li>
-                <li>DCF may be less useful for valuing young, fast-growing companies that have yet to establish a stable growth rate or have unpredictable cash flows.</li>
+                <li><strong>Assumption Sensitivity:</strong> The accuracy of a DCF valuation is highly dependent on the assumptions made about future cash flows, discount rates, and growth rates. Small adjustments in these inputs can lead to significant variations in the valuation outcome.</li>
+                <li><strong>Constant Growth Rate:</strong> DCF often assumes a steady growth rate, which may not accurately reflect the realities of businesses that experience variable growth phases.</li>
+                <li><strong>Applicability to High-Growth Firms:</strong> For young, rapidly expanding companies with unpredictable cash flows, the DCF model may be less reliable due to the difficulty in making accurate long-term forecasts.</li>
               </ul>
             </div>
         </div>
@@ -49,22 +49,22 @@
                 <form id="dcf-form" class="row g-3 justify-content-center" method="POST" action="/dcf">
                     <div class="col-md-6">
                         <label for="free-cash-flow" class="form-label">Free Cash Flow:</label>
-                        <input type="number" step="0.00001" class="form-control" id="free-cash-flow" name="free-cash-flow" required>
+                        <input type="number" step="0.1" class="form-control" id="free-cash-flow" name="free-cash-flow" required>
                     </div>
                     <div class="col-md-6">
                         <label for="discount-rate" class="form-label">Discount Rate (%):</label>
-                        <input type="number" step="0.00001" class="form-control" id="discount-rate" name="discount-rate" required>
+                        <input type="number" step="0.1" class="form-control" id="discount-rate" name="discount-rate" required>
                     </div>
                     <div class="col-md-6">
                         <label for="terminal-growth-rate" class="form-label">Terminal Growth Rate (%):</label>
-                        <input type="number" step="0.00001" class="form-control" id="terminal-growth-rate" name="terminal-growth-rate" required>
+                        <input type="number" step="0.1" class="form-control" id="terminal-growth-rate" name="terminal-growth-rate" required>
                     </div>
                     <div class="col-md-6">
                         <label for="terminal-multiple" class="form-label">Terminal Multiple:</label>
-                        <input type="number" step="0.00001" class="form-control" id="terminal-multiple" name="terminal-multiple" required>
+                        <input type="number" step="0.1" class="form-control" id="terminal-multiple" name="terminal-multiple" required>
                     </div>
                     <div class="col-12 text-center mt-3">
-                        <button type="submit" step="0.00001" class="btn btn-primary" id="calculate-btn">Calculate</button>
+                        <button type="submit" step="0.1" class="btn btn-primary" id="calculate-btn">Calculate</button>
                     </div>
                 </form>
                 <div id="result" class="enterprise_value"></div>
