@@ -1,30 +1,105 @@
 # ValueVerse
 
-#### Description:
-This is a web app that allows the user to select a standard stock-valuation model, and get a stock value by entering some data about the company and calculating the value based on the models.
 
-To use, simply:
+![Python](https://img.shields.io/badge/Python-3.0-blue) 
+![Flask](https://img.shields.io/badge/Flask-2.3.2-lightgrey) 
+![HTML](https://img.shields.io/badge/HTML-5-orange) 
+![CSS](https://img.shields.io/badge/CSS-3-blue) 
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow) 
+![License](https://img.shields.io/badge/License-MIT-green)
 
-- Download the repository to your local files
-- open an IDE
-- navigate to the downloaded folder in a terminal
-- make sure flask is installed (pip install flask)
-- run the following:
-    - set FLASK_APP=app.py
-    - flask run --port=5001
-- ctrl+click the link
+## 📝 Description
+**ValueVerse** is a simple web application designed to simplify stock valuation using three well-known financial models: **Discounted Cash Flow (DCF)**, **Dividend Discount Model (DDM)**, and a **Warren Buffett-inspired formula**. This tool allows users to input company-specific data and receive calculated stock values based on their chosen model. 
 
+This project was primarily developed to deepen my knowledge of HTML, CSS and JavaScript, and have a little fun trying to build a functional and visually appealing web interface, rather than providing sophisticated financial valuation models. 
 
-The web app has a navigation bar with a directory, which links to all the pages of the web app. The navigation bar is at the top of all of the webpages, but stays visible when the user scrolls down. This is done by writing a JavaScript code that changes the class of the nav bar when the user scrolls down, and setting appropriate CSS styling for when the user is at the top or when he has scrolled down, using the window.onscroll function of javaScript.
+---
 
-There are 4 main pages accessible from the nav bar: the home page, a models page, a contact page, and a support page. The models page contains a list and descriptions of the three available models. The contact page contains bogus contact information.
+## 📚 Table of Contents
 
-In the home page, the user is welcomed to the website, and instructed to select a model, either the DCF model, the DDM, or a simple Warren Buffett-inspired formula. He is given a short description of each model. When he clicks on a model, he is then taken to the specific model page.
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-On the specific model page, he is given a decription of the model, instructions of when it is appropriate to use it, and what are the shortcomings and risks of using such a model.
+---
 
-Under this, there is a calculator widget, that lets the user input float numbers only (positive, negative or zero, by setting input type="number" and step="0.00001", thus preventing user from inputting any wrong values). Below the calculator, the user is given a couple of definitions and recommendations to guide him when entering the required data. When the user clicks the "Calculate" button, the value of the stock appears in bold right below the button. This is done by running the web app on flask. The calculator is a `<form>`, which the user fills in. When he clicks the button, the form is submitted to the server (method="POST") and processed by flask. The necessary parameters are extracted in python using request.form.get(id). The stock value is then calculated in the back-end in python, then converted to json, and sent back to the front-end, client-side page.
+## 🛠️ Installation
 
-The client-side website then has a javascript code that includes eventListeners, and when the data is sent from the back-end, the front-end processes this data, uses some Ajax code in addition to js to update the correct tag and send it a .text response. The stock value is then displayed in bold below the calculate button.
+To run ValueVerse locally, follow these steps:
 
-That way, the page is not refreshed when the user submits data, and he can conduct some sensitivity analysis by changing the parameters and assumptions and see how it affects the stock result in an interactive way.
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/adourian/ValueVerse.git
+    cd ValueVerse
+    ```
+
+2. **Install the required dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. **Run the app:**
+    ```bash
+    export FLASK_APP=app.py  # On Windows use `set FLASK_APP=app.py`
+    flask run --port=5001
+    ```
+
+4. **Open the app in your browser:**
+    - Ctrl+Click the link provided in the terminal (usually `http://127.0.0.1:5001`).
+
+---
+
+## 🚀 Usage
+
+### 1. **Home Page**
+
+![Home Page Screenshot](https://github.com/adourian/ValueVerse/blob/main/images/Homepage.PNG)
+
+- Home page with navigation bar.
+
+### 2. **Models Page**
+
+![Models Page Screenshot](https://github.com/adourian/ValueVerse/blob/main/images/ModelSelection.PNG)
+
+- Displays selection of models to pick from.
+
+### 3. **Model Selection and Calculation**
+
+![Calculation Screenshot](https://github.com/adourian/ValueVerse/blob/main/images/ValueCalculation.PNG)
+
+- Input your company data into the calculator widget.
+- Hit "Calculate" and see the stock value displayed dynamically without page reload.
+
+---
+
+## 🌟 Features
+
+- **Interactive Calculations:** Perform sensitivity analysis by adjusting inputs and instantly seeing the results.
+- **Sticky Navigation Bar:** Easily access different pages as you explore the app.
+- **Model Explanations:** Understand when and why to use each model, complete with risks and limitations.
+
+---
+
+## 🧰 Tech Stack
+
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** Python, Flask
+- **Deployment:** TBC (working on it)
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+---
+
+## 📫 Contact
+
+- **Email:** kariad@seas.upenn.edu
+- **LinkedIn:** [Kari Adourian](https://www.linkedin.com/in/kariadourian/)
+
