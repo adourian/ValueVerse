@@ -48,24 +48,24 @@
                 <form id="buffett-form" class="row g-3 justify-content-center" method="POST" action="/buffett">
                     <div class="col-md-6">
                         <label for="trailing-eps" class="form-label">Trailing Earnings Per Share (EPS):</label>
-                        <input type="number" step="0.001" class="form-control" id="trailing-eps" name="trailing-eps" required>
+                        <input type="number" step="0.1" class="form-control" id="trailing-eps" name="trailing-eps" required>
                         <p id="error-message" style="color: red; display: none;"></p>
                     </div>
                     <div class="col-md-6">
                         <label for="expected-eps-growth" class="form-label">Expected EPS Growth (%):</label>
-                        <input type="number" step="0.0001" class="form-control" id="expected-eps-growth" name="expected-eps-growth" required>
+                        <input type="number" step="0.1" class="form-control" id="expected-eps-growth" name="expected-eps-growth" required>
                     </div>
                     <div class="col-md-6">
                         <label for="10-year-treasury-rate" class="form-label">10-Year Treasury Rate (%):</label>
-                        <input type="number" step="0.0001" class="form-control" id="treasury-rate" name="treasury-rate" required>
+                        <input type="number" step="0.1" class="form-control" id="treasury-rate" name="treasury-rate" required>
                     </div>
                     <div class="col-md-6">
                         <label for="expected-market-return" class="form-label">Expected Market Return (%):</label>
-                        <input type="number" step="0.0001" class="form-control" id="expected-market-return" name="expected-market-return" required>
+                        <input type="number" step="0.1" class="form-control" id="expected-market-return" name="expected-market-return" required>
                     </div>
                     <div class="col-md-6">
                         <label for="beta" class="form-label">Beta:</label>
-                        <input type="number" step="0.00001" class="form-control" id="beta" name="beta" required>
+                        <input type="number" step="0.1" class="form-control" id="beta" name="beta" required>
                     </div>
                     <div class="col-12 text-center mt-3">
                         <button type="submit" class="btn btn-primary" id="calculate-btn">Calculate</button>
