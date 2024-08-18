@@ -49,22 +49,22 @@
                 <form id="dcf-form" class="row g-3 justify-content-center" method="POST" action="/dcf">
                     <div class="col-md-6">
                         <label for="free-cash-flow" class="form-label">Free Cash Flow:</label>
-                        <input type="number" step="0.1" class="form-control" id="free-cash-flow" name="free-cash-flow" required>
+                        <input type="number" step="0.01" class="form-control" id="free-cash-flow" name="free-cash-flow" required>
                     </div>
                     <div class="col-md-6">
                         <label for="discount-rate" class="form-label">Discount Rate (%):</label>
-                        <input type="number" step="0.1" class="form-control" id="discount-rate" name="discount-rate" required>
+                        <input type="number" step="0.01" class="form-control" id="discount-rate" name="discount-rate" required>
                     </div>
                     <div class="col-md-6">
                         <label for="terminal-growth-rate" class="form-label">Terminal Growth Rate (%):</label>
-                        <input type="number" step="0.1" class="form-control" id="terminal-growth-rate" name="terminal-growth-rate" required>
+                        <input type="number" step="0.01" class="form-control" id="terminal-growth-rate" name="terminal-growth-rate" required>
                     </div>
                     <div class="col-md-6">
                         <label for="terminal-multiple" class="form-label">Terminal Multiple:</label>
-                        <input type="number" step="0.1" class="form-control" id="terminal-multiple" name="terminal-multiple" required>
+                        <input type="number" step="0.01" class="form-control" id="terminal-multiple" name="terminal-multiple" required>
                     </div>
                     <div class="col-12 text-center mt-3">
-                        <button type="submit" step="0.1" class="btn btn-primary" id="calculate-btn">Calculate</button>
+                        <button type="submit" step="0.01" class="btn btn-primary" id="calculate-btn">Calculate</button>
                     </div>
                 </form>
                 <div id="result" class="enterprise_value"></div>
