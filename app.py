@@ -126,6 +126,31 @@ def calculate_ddm():
 
 @app.route('/buffett', methods=['POST', 'GET'])
 def calculate_buffett():
+    """
+    Calculate the fair value of a company using the Warren Buffett Formula based on user input.
+
+    This function calculates the fair value of a company using the Warren Buffett Formula, which incorporates
+    earnings per share (EPS), expected growth rate, risk-free rate, market return, and beta. It takes the following
+    inputs from a POST request:
+    - Trailing EPS (earnings per share)
+    - Expected EPS growth rate
+    - Risk-free rate (Treasury rate)
+    - Expected market return
+    - Beta (measure of stock volatility relative to the market)
+
+    The calculation involves:
+    1. Determining the discount rate using the Capital Asset Pricing Model (CAPM) based on the risk-free rate, beta, and
+       market return.
+    2. Computing the fair value using the Warren Buffett Formula, which adjusts EPS for growth and applies the discount rate.
+
+    Returns:
+        JSON response containing the calculated fair value rounded to 2 decimal places.
+
+    Methods:
+        - POST: Processes user input and returns the fair value in JSON format.
+        - GET: Renders the Buffett input form template.
+    """
+    
     if request.method == "POST":
 
         # Inputs from form
