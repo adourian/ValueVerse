@@ -21,6 +21,29 @@ def models():
 
 @app.route('/dcf', methods=['POST', 'GET'])
 def calculate_dcf():
+    """
+    Calculate the Discounted Cash Flow (DCF) and return the enterprise value based on user input.
+
+    This function calculates the enterprise value of a company using the Discounted Cash Flow (DCF) model. 
+    It takes the following inputs from a POST request:
+    - free cash flow (FCF) for the current year
+    - discount rate
+    - terminal growth rate
+    - terminal multiple
+
+    The calculation involves:
+    1. Projecting the free cash flow for 5 years and discounting it to its present value.
+    2. Estimating the terminal value at the end of the projection period using the terminal multiple.
+    3. Discounting the terminal value to its present value.
+    4. Summing the discounted projected cash flows and the discounted terminal value to compute the total enterprise value.
+
+    Returns:
+        JSON response containing the calculated enterprise value.
+        
+    Methods:
+        - POST: Processes user input and returns the DCF enterprise value in JSON format.
+        - GET: Renders the DCF input form template.
+    """
     if request.method == "POST":
 
         current_fcf = float(request.form['free-cash-flow'])
@@ -56,6 +79,30 @@ def calculate_dcf():
 
 @app.route('/ddm', methods=['POST', 'GET'])
 def calculate_ddm():
+    """
+    Calculate the Dividend Discount Model (DDM) enterprise value based on user input.
+
+    This function calculates the enterprise value of a company using the Dividend Discount Model (DDM), specifically
+    the Gordon Growth Model. It takes the following inputs from a POST request:
+    - Dividend per share
+    - Risk-free rate
+    - Beta
+    - Market return rate
+    - Dividend growth rate
+
+    The calculation involves:
+    1. Computing the Cost of Equity using the Capital Asset Pricing Model (CAPM), which combines the risk-free rate,
+       beta, and market return.
+    2. Estimating the enterprise value using the Gordon Growth Model, which accounts for the expected growth in dividends.
+
+    Returns:
+        JSON response containing the calculated enterprise value rounded to 2 decimal places.
+
+    Methods:
+        - POST: Processes user input and returns the DDM enterprise value in JSON format.
+        - GET: Renders the DDM input form template.
+    """
+    
     if request.method == "POST":
 
         # Inputs from form
