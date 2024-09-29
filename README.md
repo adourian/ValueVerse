@@ -9,7 +9,7 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ## 📝 Description
-**ValueVerse** is a simple web application designed to simplify stock valuation using three well-known financial models: **Discounted Cash Flow (DCF)**, **Dividend Discount Model (DDM)**, and a **Warren Buffett-inspired formula**. This tool allows users to input company-specific data and receive calculated stock values based on their chosen model. The web app can be used at [this address](https://valueverse.onrender.com)(note: can take a minute to load).
+**ValueVerse** is a simple web application designed to simplify stock valuation using three well-known financial models: **Discounted Cash Flow (DCF)**, **Dividend Discount Model (DDM)**, and a **Warren Buffett-inspired formula**. This tool allows users to input company-specific data and receive calculated stock values based on their chosen model. The web app can be used at [this address](https://valueverse.onrender.com) (note: can take a minute to load).
 
 This project was primarily developed to deepen my knowledge of HTML, CSS and JavaScript, and have a little fun trying to build a functional and visually appealing web interface, rather than trying to provide accurate, sophisticated financial valuations. The models in the backend are kept very simple as the focus of this project is more on the front-end. 
 
