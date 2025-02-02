@@ -1,7 +1,7 @@
 # ValueVerse
 
 
-![Python](https://img.shields.io/badge/Python-3.0-blue) 
+![Python](https://img.shields.io/badge/Python-3-blue) 
 ![Flask](https://img.shields.io/badge/Flask-2.3.2-lightgrey) 
 ![HTML](https://img.shields.io/badge/HTML-5-orange) 
 ![CSS](https://img.shields.io/badge/CSS-3-blue) 
